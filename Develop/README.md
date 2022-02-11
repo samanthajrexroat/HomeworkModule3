@@ -15,3 +15,5 @@ https://samanthajrexroat.github.io/HomeworkModule3/
 https://github.com/samanthajrexroat/HomeworkModule3.git
 
 ## Screenshots
+    [First User Prompt] (/assets/firstUserPrompt.png)
+    [Generated Password] (/assets/generatedPassword.png)

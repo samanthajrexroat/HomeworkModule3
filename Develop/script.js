@@ -46,10 +46,10 @@ function userLengthPreference() {
   } 
 
   // The user is asked whether they would like to include certain characters in their password
-  var hasNumbers = alert("Would you like numbers in your password?")
-  var hasUppercase = alert("Would you like uppercase letters in your password?")
-  var hasLowercase = alert("Would you like lowercase letters in your password?")
-  var hasSpecialCharacters = alert("Would you like special characters in your password?") 
+  var hasNumbers = confirm("Would you like numbers in your password?")
+  var hasUppercase = confirm("Would you like uppercase letters in your password?")
+  var hasLowercase = confirm("Would you like lowercase letters in your password?")
+  var hasSpecialCharacters = confirm("Would you like special characters in your password?") 
 
   // If the user selects OK to a character type, they will be included in a new concatenated array
   // declared in global memory called userChoices.  
