@@ -1,4 +1,4 @@
-# HomeworkModule3GeneratePassword
+# HomeworkModule3
 
 ## Description
 
@@ -8,5 +8,10 @@ When the user clicks a button, they are prompted to provide a length for their p
 
 The application then runs a series of functions that generate a randomly generated and novel password based on the user's input.
 
+## URLs
 
-# HomeworkModule3
+https://samanthajrexroat.github.io/HomeworkModule3/
+
+https://github.com/samanthajrexroat/HomeworkModule3.git
+
+## Screenshots

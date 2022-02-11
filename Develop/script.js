@@ -16,16 +16,17 @@ var specialCharactersArray = ['@','%','+','/',"'",'!','#','$','^','?',':',
     ',',')','(','}','{',']','[','~','-','_','.']
 
 
-// Declaring these variables as arrays  
+// Declaring these variables as empty arrays  
 var finalPassword = []
 var userChoices = []
 
 // Declaring this variable in global memory
 var passwordLengthPrompt;
 
-
+// The generatePassword function calls userLengthPreference.
 function generatePassword(){
   userLengthPreference();
+  // the num variable takes the given user length and returns a string 
   var num = parseInt(passwordLengthPrompt) - finalPassword.length
   for(var i = 0; i < num; i++){
     finalPassword.push(userChoices[Math.floor(Math.random()*userChoices.length)])
@@ -33,6 +34,9 @@ function generatePassword(){
   var password = finalPassword.join("")
   return password
 }
+// The userLengthPreference function prompts the user to enter a number for the length of their
+// password.  The console logs the response.  The user is required to enter a number between
+// 8 and 128 or they are alerted of that fact.
 function userLengthPreference() {
   passwordLengthPrompt = prompt("How long would you like your password to be?")
   console.log(passwordLengthPrompt);
@@ -41,22 +45,24 @@ function userLengthPreference() {
     return
   } 
 
+  // The user is asked whether they would like to include certain characters in their password
+  var hasNumbers = alert("Would you like numbers in your password?")
+  var hasUppercase = alert("Would you like uppercase letters in your password?")
+  var hasLowercase = alert("Would you like lowercase letters in your password?")
+  var hasSpecialCharacters = alert("Would you like special characters in your password?") 
 
-  var hasNumbers = confirm("Would you like numbers in your password?")
-  var hasUppercase = confirm("Would you like uppercase letters in your password?")
-  var hasLowercase = confirm("Would you like lowercase letters in your password?")
-  var hasSpecialCharacters = confirm("Would you like special characters in your password?") 
-
-
+  // If the user selects OK to a character type, they will be included in a new concatenated array
+  // declared in global memory called userChoices.  
   if (hasNumbers){
     userChoices = userChoices.concat(numbersArray);
+    // This variable will add a random number to an empty array called finalPassword
     var number = numbersArray[Math.floor(Math.random()*numbersArray.length)]
     finalPassword.push(number);
   }
 
   if (hasUppercase){
     userChoices = userChoices.concat(upperCaseArray);
-    console.log(userChoices);
+    // Adds an uppercase letter to finalPassword
     var uppercase = upperCaseArray[Math.floor(Math.random()*upperCaseArray.length)]
     console.log(uppercase);
     finalPassword.push(uppercase);
@@ -64,12 +70,14 @@ function userLengthPreference() {
 
   if (hasLowercase){
     userChoices = userChoices.concat(lowerCaseArray);
+    // Adds a lowercase letter to finalPassword
     var lowercase = lowerCaseArray[Math.floor(Math.random()*lowerCaseArray.length)]
     console.log(lowercase);
     finalPassword.push(lowercase);
   }
   if (hasSpecialCharacters){
     userChoices = userChoices.concat(specialCharactersArray);
+    // Adds special characters to finalPassword
     var specialcharacters = specialCharactersArray[Math.floor(Math.random()*specialCharactersArray.length)]
     console.log(specialcharacters);
     finalPassword.push(specialcharacters);
@@ -80,11 +88,9 @@ function userLengthPreference() {
   return finalPassword;
 }
 
-
-
 // Write password to the #password input
 // The first function to be called at the click event.  It will trigger the
-// generatePassword funtion, then target the password id.
+// generatePassword funtion. 
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
