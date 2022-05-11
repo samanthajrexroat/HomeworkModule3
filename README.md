@@ -1,4 +1,4 @@
-# HomeworkModule3
+# Password Generator
 
 ## Description
 
