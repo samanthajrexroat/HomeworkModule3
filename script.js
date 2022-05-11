@@ -39,7 +39,7 @@ function generatePassword(){
 // 8 and 128 or they are alerted of that fact.
 function userLengthPreference() {
   passwordLengthPrompt = prompt("How long would you like your password to be?")
-  console.log(passwordLengthPrompt);
+  
   if (passwordLengthPrompt > 128 || passwordLengthPrompt < 8){
     alert("Password must be between 8 and 128 characters.");
     return
@@ -64,7 +64,7 @@ function userLengthPreference() {
     userChoices = userChoices.concat(upperCaseArray);
     // Adds an uppercase letter to finalPassword
     var uppercase = upperCaseArray[Math.floor(Math.random()*upperCaseArray.length)]
-    console.log(uppercase);
+    
     finalPassword.push(uppercase);
   }
 
@@ -72,19 +72,17 @@ function userLengthPreference() {
     userChoices = userChoices.concat(lowerCaseArray);
     // Adds a lowercase letter to finalPassword
     var lowercase = lowerCaseArray[Math.floor(Math.random()*lowerCaseArray.length)]
-    console.log(lowercase);
+    
     finalPassword.push(lowercase);
   }
   if (hasSpecialCharacters){
     userChoices = userChoices.concat(specialCharactersArray);
     // Adds special characters to finalPassword
     var specialcharacters = specialCharactersArray[Math.floor(Math.random()*specialCharactersArray.length)]
-    console.log(specialcharacters);
+    
     finalPassword.push(specialcharacters);
   }
 
-  console.log(finalPassword);
-  console.log(userChoices);
   return finalPassword;
 }
 
